@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.openxc.vehiclecrash.simulation"
+    android:versionCode="14"
+    android:versionName="0.0001" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+
+    <service android:name="com.openxc.vehiclecrash.simulation.VehicleCrashNotificationService" />
+    <service android:name="com.openxc.VehicleManager" />
+    <service
+        android:name="com.openxc.remote.VehicleService"
+        android:process=":remote" >
+        <intent-filter>
+            <action android:name="com.openxc.remote.VehicleServiceInterface" />
+        </intent-filter>
+    </service>
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+
+</manifest>
